@@ -2,7 +2,7 @@
 
 ###
 
-I'm Emma, a developer from Benin currently studying cybersecurity. I started programming out of curiosity and quickly became interested in understanding not only how software is built, but also how systems work underneath and how they can be secured.
+I'm Emma <img src="https://flagcdn.com/w40/bj.png" width="28" alt="Benin flag">, a developer from Benin currently studying cybersecurity. I started programming out of curiosity and quickly became interested in understanding not only how software is built, but also how systems work underneath and how they can be secured.
 
 ###
 
