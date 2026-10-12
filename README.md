@@ -9,4 +9,16 @@ Interested in software development and security analysis
 
 ## Connect
 
-[LinkedIn](https://www.linkedin.com/in/emmadasilvadev) · [Instagram](https://www.instagram.com/emmadev.bj) · [Portfolio](https://emma-portfolio-6mxwvdkvc-emmadev-team.vercel.app/)
+<p align="left">
+  <a href="https://www.linkedin.com/in/emmadasilvadev">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="32" height="32" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://www.instagram.com/emmadev.bj">
+    <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" width="32" height="32" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://emma-portfolio-6mxwvdkvc-emmadev-team.vercel.app/">
+    <img src="https://img.icons8.com/fluency/48/domain.png" alt="Portfolio" width="32" height="32" />
+  </a>
+</p>
