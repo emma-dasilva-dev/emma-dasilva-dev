@@ -17,6 +17,10 @@ I started programming in 2025 and developed an interest in understanding how sof
 - **Security Research:** Investigating system weaknesses and potential mitigations.
 - **Systems Security:** Exploring access control, authentication, and system hardening.
 
+## GitHub Activity
+
+![Animated GitHub contribution calendar](assets/contributions.svg)
+
 ## Connect
 
 [LinkedIn](https://www.linkedin.com/in/emmadasilvadev) · [Instagram](https://www.instagram.com/emmadev.bj) · [Portfolio](https://emma-portfolio-6mxwvdkvc-emmadev-team.vercel.app/)
