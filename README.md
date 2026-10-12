@@ -1,12 +1,13 @@
+## Hi! I'm Emma:
+
+First-year Cybersecurity student from Benin  
+Software development enthusiast  
+Currently learning cybersecurity fundamentals and vulnerability analysis  
+Interested in understanding, analyzing, and securing computer systems
+
 <p align="center">
   <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnhibno2c2g5MWIweTN2ZmtqZWtub2hodThmb2lvZWRsanR0aDZqZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L1R1tvI9svkIWwpVYr/giphy.gif" width="700" alt="Animated cybersecurity-themed GIF" />
 </p>
-
-**Cybersecurity Student | Software Development**
-
-I'm Emma, a first-year Cybersecurity student from Benin.
-
-I started programming in 2025 and developed an interest in understanding how software and computer systems operate beyond the user interface, particularly how security vulnerabilities emerge and how they can be mitigated.
 
 ## Current Focus
 
