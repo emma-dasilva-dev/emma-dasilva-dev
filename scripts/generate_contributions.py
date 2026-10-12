@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build an animated, blue GitHub contribution calendar as a self-contained SVG."""
 import datetime as dt
-import json
+from html.parser import HTMLParser
 import os
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -9,7 +9,7 @@ from xml.sax.saxutils import escape
 
 USERNAME = os.environ.get("GITHUB_USERNAME", "emma-dasilva-dev")
 OUTPUT = Path("assets/contributions.svg")
-URL = f"https://github-contributions-api.deno.dev/{USERNAME}.json"
+URL = f"https://github.com/users/{USERNAME}/contributions"
 COLORS = {
     "NONE": "#161b22",
     "FIRST_QUARTILE": "#183a63",
@@ -19,16 +19,41 @@ COLORS = {
 }
 CELL, GAP, LEFT, TOP = 11, 3, 22, 69
 
+class ContributionParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.days = {}
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
+        date = attributes.get("data-date")
+        level = attributes.get("data-level")
+        if date and level is not None:
+            self.days[date] = int(level)
+
 def main():
-    request = Request(URL, headers={"User-Agent": "emma-github-readme-calendar/1.0"})
+    request = Request(URL, headers={"User-Agent": "Mozilla/5.0", "Accept": "text/html"})
     with urlopen(request, timeout=30) as response:
-        data = json.load(response)
-    weeks = data.get("contributions")
-    if not isinstance(weeks, list) or not weeks:
-        raise ValueError("No valid contribution weeks returned; retaining previous graphic")
-    total = data.get("totalContributions", 0)
-    if isinstance(total, dict):
-        total = sum(v for v in total.values() if isinstance(v, int))
+        page = response.read().decode("utf-8")
+    parser = ContributionParser()
+    parser.feed(page)
+    if len(parser.days) < 100:
+        raise ValueError("GitHub contribution grid unavailable; refusing to generate inaccurate SVG")
+    today = max(dt.date.fromisoformat(d) for d in parser.days)
+    start = min(dt.date.fromisoformat(d) for d in parser.days)
+    first_sunday = start - dt.timedelta(days=(start.weekday() + 1) % 7)
+    weeks = []
+    cursor = first_sunday
+    while cursor <= today:
+        week = []
+        for _ in range(7):
+            date = cursor.isoformat()
+            if date in parser.days:
+                level = parser.days[date]
+                week.append({"date": date, "contributionLevel": ("NONE", "FIRST_QUARTILE", "SECOND_QUARTILE", "THIRD_QUARTILE", "FOURTH_QUARTILE")[min(4, max(0, level))], "contributionCount": None})
+            cursor += dt.timedelta(days=1)
+        weeks.append(week)
+    total = "GitHub activity"
     width = max(700, LEFT * 2 + len(weeks) * (CELL + GAP))
     height = 216
     parts = [
@@ -42,7 +67,7 @@ def main():
         ']]></style>',
         f'<rect width="{width}" height="{height}" rx="12" fill="#0d1117"/>',
         f'<text x="{LEFT}" y="29" class="heading">@{escape(USERNAME)}</text>',
-        f'<text x="{width-LEFT}" y="29" class="label" text-anchor="end">{escape(str(total))} contributions in the last year</text>',
+        f'<text x="{width-LEFT}" y="29" class="label" text-anchor="end">Contributions · last 12 months</text>',
         '<text x="2" y="108" class="label">M</text>',
         '<text x="2" y="136" class="label">W</text>',
         '<text x="2" y="164" class="label">F</text>',
@@ -62,10 +87,10 @@ def main():
                 last_month = d.month
             level = day.get("contributionLevel", "NONE")
             fill = COLORS.get(level, COLORS["NONE"])
-            count = int(day.get("contributionCount", 0))
+            count = day.get("contributionCount")
             x, y = LEFT + wi * (CELL + GAP), TOP + di * (CELL + GAP)
             delay = min(wi * .012 + di * .008, 1.1)
-            parts.append(f'<rect class="day" x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="2" fill="{fill}" style="animation-delay:{delay:.3f}s"><title>{count} contributions on {escape(date)}</title></rect>')
+            parts.append(f'<rect class="day" x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="2" fill="{fill}" style="animation-delay:{delay:.3f}s"><title>Contribution activity on {escape(date)}</title></rect>')
     parts += [
         f'<text x="{LEFT}" y="198" class="label">Less</text>',
     ]
@@ -77,7 +102,7 @@ def main():
     ]
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text("\n".join(parts) + "\n", encoding="utf-8")
-    print(f"Generated {OUTPUT}: {len(weeks)} weeks, {total} contributions")
+    print(f"Generated {OUTPUT}: {len(weeks)} weeks from GitHub")
 
 if __name__ == "__main__":
     main()
