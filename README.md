@@ -15,9 +15,7 @@ Interested in software development and security analysis
   </a>
   &nbsp;&nbsp;
   <a href="https://www.instagram.com/emmadev.bj">
-    <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" width="32" height="32" />
-  </a>
-  &nbsp;&nbsp;
+ 
   <a href="https://emma-portfolio-6mxwvdkvc-emmadev-team.vercel.app/">
     <img src="https://img.icons8.com/fluency/48/domain.png" alt="Portfolio" width="32" height="32" />
   </a>
