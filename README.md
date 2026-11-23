@@ -1,22 +1,23 @@
-## Hi! I'm Emma:
+# Emma Da Silva
 
-First-year Cybersecurity student  
-Interested in software development and security analysis
+**Cybersecurity & Software Development Student**  
+Based in Cotonou, Benin
 
-<p align="center">
-  <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnhibno2c2g5MWIweTN2ZmtqZWtub2hodThmb2lvZWRsanR0aDZqZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L1R1tvI9svkIWwpVYr/giphy.gif" width="700" alt="Animated cybersecurity-themed GIF" />
-</p>
+I'm a first-year student studying cybersecurity and computer science, with a strong interest in software development, web technologies, and application security.
 
-## Connect
+I enjoy building practical digital products, understanding how systems work, and improving my skills through hands-on projects.
 
-<p align="left">
-  <a href="https://www.linkedin.com/in/emmadasilvadev">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="32" height="32" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://www.instagram.com/emmadev.bj">
- 
-  <a href="https://emma-portfolio-6mxwvdkvc-emmadev-team.vercel.app/">
-    <img src="https://img.icons8.com/fluency/48/domain.png" alt="Portfolio" width="32" height="32" />
-  </a>
-</p>
+### Areas of focus
+
+- **Software development:** Web applications and user-focused digital experiences
+- **Cybersecurity:** Secure development, Linux, and security fundamentals
+- **Currently learning:** C, JavaScript, Python, and computer science fundamentals
+
+### Selected projects
+
+- **[Aquamazone Adventure](https://github.com/emma-dasilva-dev/aquamazone-adventure)** — A website for a nautical leisure business in Benin.
+- **[Cashless Landing Page](https://github.com/emma-dasilva-dev/cashless-landing-page)** — A web landing-page project.
+
+### Connect
+
+[LinkedIn](https://www.linkedin.com/in/emmadasilvadev) · [GitHub](https://github.com/emma-dasilva-dev)
