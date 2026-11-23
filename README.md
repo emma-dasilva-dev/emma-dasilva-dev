@@ -15,4 +15,4 @@ I enjoy building practical digital products, understanding how systems work, and
 
 ### Connect
 
-[LinkedIn](https://www.linkedin.com/in/emmadasilvadev) · [GitHub](https://github.com/emma-dasilva-dev)
+[LinkedIn](https://www.linkedin.com/in/emma-da-silva-41284742a/) · [GitHub](https://github.com/emma-dasilva-dev)
